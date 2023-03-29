@@ -20,7 +20,7 @@
                             @course.Lecturer.Name
                             @if (Model.ShowAction)
                             {
-                                <button class="btn btn-link btn-sm js-toggle-attendance" data-user-id="@course.LecturerId">Follow</button>
+                                <button class="btn btn-default btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>
 
                             }
                         </span>
@@ -58,7 +58,7 @@
                 $.post("/api/followings", { followeeId: button.attr("data-user-id") })
                     .done(function () {
                         button.text("Following");
-                    });
+                    })
                     .fail(function () {
                         alert("Something failed");
                     });

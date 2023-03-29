@@ -20,6 +20,8 @@ namespace BigSchool1.Controllers
             _dbContext = new ApplicationDbContext();
         }
 
+
+
         [Authorize]
         [HttpGet]
         public ActionResult Create()
@@ -30,7 +32,6 @@ namespace BigSchool1.Controllers
             };
             return View(viewModel);
         }
-
 
         [Authorize] // Xac thuc quyen dang nhap
         [HttpPost]
@@ -48,7 +49,6 @@ namespace BigSchool1.Controllers
                 DateTime = viewModel.GetDateTime(),
                 CategoryId = viewModel.Category,
                 Place = viewModel.Place
-
             };
 
             _dbContext.Courses.Add(course);
@@ -86,6 +86,7 @@ namespace BigSchool1.Controllers
                 .Include(l => l.Lecturer)
                 .Include(c => c.Category)
                 .ToList();
+
             return View(courses);
         }
     }

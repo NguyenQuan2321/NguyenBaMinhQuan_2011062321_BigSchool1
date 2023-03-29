@@ -24,7 +24,7 @@
                     @course.Lecturer.Name
                     @if (Model.ShowAction)
                     {
-                        <button class="btn btn-link btn-sm js-toggle-attendance" data-user-id="@course.LecturerId">Follow</button>
+                        <button class="btn btn-default btn-sm js-toggle-attendance" data-user-id="@course.LecturerId">Follow</button>
 
                     }
                 </span>
@@ -34,7 +34,6 @@
                 @if (Model.ShowAction)
                 {
                     <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
-
                 }
             </div>
         </li>
